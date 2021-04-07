@@ -3,7 +3,8 @@ import io from "socket.io-client";
 import queryString from "query-string";
 import NavBar from "./NavBar/NavBar";
 import Messages from "./Messages";
-
+import TopBar from "../components/TopBar";
+import { Container } from "semantic-ui-react";
 let socket;
 
 const Chat = ({ location }) => {
@@ -50,7 +51,8 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <div>
+    <Container>
+      <TopBar name={room} />
       <NavBar />
       <Messages messages={messages} name={name} />
       Chat
@@ -61,7 +63,7 @@ const Chat = ({ location }) => {
           event.key === "Enter" ? sendMessage(event) : null
         }
       />
-    </div>
+    </Container>
   );
 };
 

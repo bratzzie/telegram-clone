@@ -23,3 +23,30 @@ const Message = ({ message: { user, text }, name }) => {
 };
 
 export default Message;
+
+/*
+  <Message
+      style={{
+        backgroundColor: "#FFF",
+        border: "transparent",
+        outline: "transparent",
+      }}
+    >
+      <MessageHeader>
+        <p>{trimmedName}</p>
+      </MessageHeader>
+      <p>{ReactEmoji.emojify(text)}</p>
+    </Message>
+  ) : (
+    <Message
+      style={{
+        backgroundColor: "#FFF",
+        border: "transparent",
+        outline: "transparent",
+      }}
+    >
+      <MessageHeader>
+        <p>{user}</p>
+      </MessageHeader>
+      <p>{ReactEmoji.emojify(text)}</p>
+    </Message> */
