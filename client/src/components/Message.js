@@ -10,43 +10,18 @@ const Message = ({ message: { user, text }, name }) => {
     iseSentByCurrentUser = true;
   }
   return iseSentByCurrentUser ? (
-    <div style={{ backgroundColor: "blue" }}>
-      <p>{trimmedName}</p>
+    <div style={{ backgroundColor: "#fff", paddingBottom: 15 }}>
+      <h4 style={{ fontWeight: 600, textTransform: "capitalize" }}>
+        {trimmedName}
+      </h4>
       <p>{ReactEmoji.emojify(text)}</p>
     </div>
   ) : (
-    <div style={{ backgroundColor: "#fff" }}>
-      <p>{user}</p>
+    <div style={{ backgroundColor: "#fff", paddingBottom: 15 }}>
+      <h4 style={{ fontWeight: 600, textTransform: "capitalize" }}>{user}</h4>
       <p>{ReactEmoji.emojify(text)}</p>
     </div>
   );
 };
 
 export default Message;
-
-/*
-  <Message
-      style={{
-        backgroundColor: "#FFF",
-        border: "transparent",
-        outline: "transparent",
-      }}
-    >
-      <MessageHeader>
-        <p>{trimmedName}</p>
-      </MessageHeader>
-      <p>{ReactEmoji.emojify(text)}</p>
-    </Message>
-  ) : (
-    <Message
-      style={{
-        backgroundColor: "#FFF",
-        border: "transparent",
-        outline: "transparent",
-      }}
-    >
-      <MessageHeader>
-        <p>{user}</p>
-      </MessageHeader>
-      <p>{ReactEmoji.emojify(text)}</p>
-    </Message> */

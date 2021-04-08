@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Telegram Clone App",
+  "name": "Simple Telegram Clone App using Websockets",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon_tel.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },

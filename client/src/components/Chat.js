@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 import queryString from "query-string";
-import NavBar from "./NavBar/NavBar";
+import NavBar from "./NavBar";
 import Messages from "./Messages";
 import TopBar from "../components/TopBar";
 import { Container } from "semantic-ui-react";
+import InputComponent from "./InputComponent";
 let socket;
 
 const Chat = ({ location }) => {
@@ -51,18 +52,30 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <Container>
+    <Container
+      style={{
+        backgroundColor: "#fff",
+        border: "1px solid #DEDEDF",
+        borderRadius: 5,
+        margin: "1rem 0",
+        height: "95.5vh",
+        boxShadow: "0 1px 2px 0 rgb(34 36 38 / 15%)",
+        overflow: "hidden",
+      }}
+    >
       <TopBar name={room} />
-      <NavBar />
-      <Messages messages={messages} name={name} />
-      Chat
-      <input
-        value={message}
-        onChange={(event) => setMessage(event.target.value)}
-        onKeyPress={(event) =>
-          event.key === "Enter" ? sendMessage(event) : null
-        }
-      />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <NavBar />
+
+        <Container style={{ minHeight: "100vh" }}>
+          <Messages messages={messages} name={name} />
+          <InputComponent
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </Container>
+      </div>
     </Container>
   );
 };
